@@ -55,7 +55,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="KdTree2D.cs" />
     <Compile Include="KdTree3D.cs" />
+    <Compile Include="Point2D.cs" />
     <Compile Include="Point3D.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -70,6 +72,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Rectangle.cs" />
     <Compile Include="RectPrism.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -3,9 +3,9 @@
 namespace RevitUtils
 {
     /// <summary>
-    /// A class used to represent a 3D point
+    /// A class used to represent a 2D point
     /// </summary>
-    public class Point3D
+    public class Point2D
     {
         /// <summary>
         /// X coordinate
@@ -16,30 +16,23 @@ namespace RevitUtils
         /// </summary>
         public double Y { get; }
         /// <summary>
-        /// Z coordinate
+        /// Point at (Negative Infinity, Negative Infinity)
         /// </summary>
-        public double Z { get; }
+        public static Point2D Min = new Point2D(double.NegativeInfinity, double.NegativeInfinity);
+        /// <summary>
+        /// Point at (Positive Infinity, Positive Infinity)
+        /// </summary>
+        public static Point2D Max = new Point2D(double.PositiveInfinity, double.PositiveInfinity);
 
         /// <summary>
-        /// Point at (Negative Infinity, Negative Infinity, Negative Infinity)
-        /// </summary>
-        public static Point3D Min = new Point3D(double.NegativeInfinity, double.NegativeInfinity, double.NegativeInfinity);
-        /// <summary>
-        /// Point at (Positive Infinity, Positive Infinity, Positive Infinity)
-        /// </summary>
-        public static Point3D Max = new Point3D(double.PositiveInfinity, double.PositiveInfinity, double.PositiveInfinity);
-
-        /// <summary>
-        /// Constructor for Point3D
+        /// Constructor for Point2D
         /// </summary>
         /// <param name="x">X coordinate</param>
         /// <param name="y">Y coordinate</param>
-        /// <param name="z">Z coordinate</param>
-        public Point3D(double x, double y, double z)
+        public Point2D(double x, double y)
         {
             X = x;
             Y = y;
-            Z = z;
         }
 
         /// <summary>
@@ -47,22 +40,21 @@ namespace RevitUtils
         /// </summary>
         /// <param name="p">Point to find distance to.</param>
         /// <returns>The distance between this point and another point</returns>
-        public double DistTo(Point3D p)
+        public double DistTo(Point2D p)
         {
-            return Math.Sqrt(Math.Pow(p.X - X, 2) + Math.Pow(p.Y - Y, 2) + Math.Pow(p.Z - Z, 2));
+            return Math.Sqrt(Math.Pow(p.X - X, 2) + Math.Pow(p.Y - Y, 2));
         }
 
         /// <summary>
-        /// Find the distance to a RectPrism
+        /// Find the distance to a Rectangle
         /// </summary>
-        /// <param name="rect">Rectangular prism to find distance to</param>
-        /// <returns>The distance to the rectangular prism.</returns>
-        public double DistTo(RectPrism rect)
+        /// <param name="rect">Rectangle to find distance to</param>
+        /// <returns>The distance to the rectangle.</returns>
+        public double DistTo(Rectangle rect)
         {
             double dx = Math.Max(rect.MinX - X, Math.Max(0, X - rect.MaxX));
             double dy = Math.Max(rect.MinY - Y, Math.Max(0, Y - rect.MaxY));
-            double dz = Math.Max(rect.MinZ - Z, Math.Max(0, Z - rect.MaxZ));
-            return Math.Sqrt(dx * dx + dy * dy + dz * dz);
+            return Math.Sqrt(dx * dx + dy * dy);
         }
 
         /// <summary>
@@ -72,22 +64,20 @@ namespace RevitUtils
         /// <returns></returns>
         public override bool Equals(object obj)
         {
-            return obj is Point3D d &&
+            return obj is Point2D d &&
                    X == d.X &&
-                   Y == d.Y &&
-                   Z == d.Z;
+                   Y == d.Y;
         }
 
         /// <summary>
-        /// Hashcode Method
+        /// Hashcode method
         /// </summary>
         /// <returns></returns>
         public override int GetHashCode()
         {
-            int hashCode = -307843816;
+            int hashCode = 1861411795;
             hashCode = hashCode * -1521134295 + X.GetHashCode();
             hashCode = hashCode * -1521134295 + Y.GetHashCode();
-            hashCode = hashCode * -1521134295 + Z.GetHashCode();
             return hashCode;
         }
     }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5FF084EE-E25B-47EE-A2D8-0735C20CAB4F}</ProjectGuid>
+    <ProjectGuid>{11B8A369-5D1E-4BE4-8FD0-C2EE8BC54C7F}</ProjectGuid>
     <OutputType>library</OutputType>
-    <RootNamespace>RevitUtils</RootNamespace>
-    <AssemblyName>RevitUtils</AssemblyName>
+    <RootNamespace>RevitRibbonExample</RootNamespace>
+    <AssemblyName>RevitRibbonExample</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -63,10 +64,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="KdTree2D.cs" />
-    <Compile Include="KdTree3D.cs" />
-    <Compile Include="Point2D.cs" />
-    <Compile Include="Point3D.cs" />
+    <Compile Include="ExampleCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -80,8 +78,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Rectangle.cs" />
-    <Compile Include="RectPrism.cs" />
+    <Compile Include="RevitRibbonExample.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -90,6 +87,10 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Example16.png" />
+    <EmbeddedResource Include="Resources\Example32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

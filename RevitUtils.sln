@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitUtils", "RevitUtils\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitRibbonExample", "RevitRibbonExample\RevitRibbonExample.csproj", "{11B8A369-5D1E-4BE4-8FD0-C2EE8BC54C7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RevitTemplate", "RevitTemplate\RevitTemplate.csproj", "{2F10CEF7-A5AD-4B1C-93FA-B71C532D73AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{11B8A369-5D1E-4BE4-8FD0-C2EE8BC54C7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11B8A369-5D1E-4BE4-8FD0-C2EE8BC54C7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11B8A369-5D1E-4BE4-8FD0-C2EE8BC54C7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F10CEF7-A5AD-4B1C-93FA-B71C532D73AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F10CEF7-A5AD-4B1C-93FA-B71C532D73AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F10CEF7-A5AD-4B1C-93FA-B71C532D73AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F10CEF7-A5AD-4B1C-93FA-B71C532D73AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

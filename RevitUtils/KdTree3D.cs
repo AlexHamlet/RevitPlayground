@@ -67,7 +67,7 @@ namespace RevitUtils
                 }
                 else
                 {
-                    current.more = Put(current.less, Data, position,
+                    current.more = Put(current.more, Data, position,
                         new RectPrism(current.Position.X, rect.MinY, rect.MinZ, rect.MaxX, rect.MaxY, rect.MaxZ)
                         , 1);
                 }
@@ -83,7 +83,7 @@ namespace RevitUtils
                 }
                 else
                 {
-                    current.more = Put(current.less, Data, position,
+                    current.more = Put(current.more, Data, position,
                         new RectPrism(rect.MinX, current.Position.Y, rect.MinZ, rect.MaxX, rect.MaxY, rect.MaxZ)
                         , 2);
                 }
@@ -99,7 +99,7 @@ namespace RevitUtils
                 }
                 else
                 {
-                    current.more = Put(current.less, Data, position,
+                    current.more = Put(current.more, Data, position,
                         new RectPrism(rect.MinX, rect.MinY, current.Position.Z, rect.MaxX, rect.MaxY, rect.MaxZ)
                         , 0);
                 }

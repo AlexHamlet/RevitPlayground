@@ -59,6 +59,11 @@
   <ItemGroup>
     <Compile Include="KdTree2DTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Point2DTest.cs" />
+    <Compile Include="RectangleTest.cs" />
+    <Compile Include="KdTree3DTest.cs" />
+    <Compile Include="RectPrismTest.cs" />
+    <Compile Include="Point3DTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

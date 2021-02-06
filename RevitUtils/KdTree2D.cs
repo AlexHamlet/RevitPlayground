@@ -41,7 +41,7 @@ namespace RevitUtils
         {
             //Position is requried to place data
             if (position == null)
-                throw new ArgumentNullException("Position cannot be null");
+                throw new ArgumentNullException("position");
             head = Put(head, data, position, Rectangle.Infinite, true);
             Count++;
         }

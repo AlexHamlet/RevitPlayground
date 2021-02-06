@@ -38,11 +38,13 @@ namespace RevitUtils
         /// <summary>
         /// Find the distance between points
         /// </summary>
-        /// <param name="p">Point to find distance to.</param>
+        /// <param name="point">Point to find distance to.</param>
         /// <returns>The distance between this point and another point</returns>
-        public double DistTo(Point2D p)
+        public double DistTo(Point2D point)
         {
-            return Math.Sqrt(Math.Pow(p.X - X, 2) + Math.Pow(p.Y - Y, 2));
+            if (point == null)
+                throw new ArgumentNullException("point");
+            return Math.Sqrt(Math.Pow(point.X - X, 2) + Math.Pow(point.Y - Y, 2));
         }
 
         /// <summary>
@@ -52,6 +54,8 @@ namespace RevitUtils
         /// <returns>The distance to the rectangle.</returns>
         public double DistTo(Rectangle rect)
         {
+            if (rect == null)
+                throw new ArgumentNullException("rect");
             double dx = Math.Max(rect.MinX - X, Math.Max(0, X - rect.MaxX));
             double dy = Math.Max(rect.MinY - Y, Math.Max(0, Y - rect.MaxY));
             return Math.Sqrt(dx * dx + dy * dy);

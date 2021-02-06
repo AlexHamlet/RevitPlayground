@@ -18,6 +18,14 @@ namespace KdTree2DTest
         }
 
         [TestMethod]
+        public void PutNull()
+        {
+            harness = new KdTree2D<int>();
+            var ex = Assert.Throws<ArgumentNullException>(() => harness.Put(0,null));
+            Assert.That(ex.Message, Is.EqualTo("Value cannot be null.\r\nParameter name: position"));
+        }
+
+        [TestMethod]
         public void InitCount()
         {
             int expected = 0;

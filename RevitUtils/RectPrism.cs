@@ -39,14 +39,8 @@
         /// </summary>
         /// <param name="min">Min Point3D for the prism</param>
         /// <param name="max">Max Point3D for the prism</param>
-        public RectPrism(Point3D min, Point3D max)
+        public RectPrism(Point3D min, Point3D max):this(Utils.CheckNotNull<Point3D>(min).X, Utils.CheckNotNull<Point3D>(min).Y, Utils.CheckNotNull<Point3D>(min).Z, Utils.CheckNotNull<Point3D>(max).X, Utils.CheckNotNull<Point3D>(max).Y, Utils.CheckNotNull<Point3D>(max).Z)
         {
-            MinX = min.X;
-            MinY = min.Y;
-            MinZ = min.Z;
-            MaxX = max.X;
-            MaxY = max.Y;
-            MaxZ = max.Z;
         }
 
         /// <summary>

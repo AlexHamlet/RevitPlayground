@@ -23,14 +23,14 @@ namespace RevitUtils
         /// <summary>
         /// A count of the elements contained in the KdTree
         /// </summary>
-        public int count { get; private set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Constructor for KdTree3D
         /// </summary>
         public KdTree3D()
         {
-            count = 0;
+            Count = 0;
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace RevitUtils
             if (position == null)
                 throw new ArgumentNullException("Position cannot be null");
             head = Put(head, data, position, RectPrism.Infinite, 0);
-            count++;
+            Count++;
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace RevitUtils
                 }
                 else
                 {
-                    current.more = Put(current.less, Data, position,
+                    current.more = Put(current.more, Data, position,
                         new RectPrism(current.Position.X, rect.MinY, rect.MinZ, rect.MaxX, rect.MaxY, rect.MaxZ)
                         , 1);
                 }
@@ -89,7 +89,7 @@ namespace RevitUtils
                 }
                 else
                 {
-                    current.more = Put(current.less, Data, position,
+                    current.more = Put(current.more, Data, position,
                         new RectPrism(rect.MinX, current.Position.Y, rect.MinZ, rect.MaxX, rect.MaxY, rect.MaxZ)
                         , 2);
                 }
@@ -105,7 +105,7 @@ namespace RevitUtils
                 }
                 else
                 {
-                    current.more = Put(current.less, Data, position,
+                    current.more = Put(current.more, Data, position,
                         new RectPrism(rect.MinX, rect.MinY, current.Position.Z, rect.MaxX, rect.MaxY, rect.MaxZ)
                         , 0);
                 }
@@ -185,7 +185,7 @@ namespace RevitUtils
         /// <returns>The data closest to the point passed in.</returns>
         public T Nearest(Point3D point)
         {
-            if (count == 0)
+            if (Count == 0)
                 throw new InvalidOperationException("Tree has no elements");
             Node champ = head;
             Nearest(head, point, 0, ref champ);

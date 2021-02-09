@@ -82,6 +82,7 @@
     </Compile>
     <Compile Include="Rectangle.cs" />
     <Compile Include="RectPrism.cs" />
+    <Compile Include="Utils.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

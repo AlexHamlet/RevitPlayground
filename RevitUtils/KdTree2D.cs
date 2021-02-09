@@ -24,14 +24,14 @@ namespace RevitUtils
         /// <summary>
         /// A count of the elements contained in the KdTree
         /// </summary>
-        public int count { get; private set; }
+        public int Count { get; private set; }
 
         /// <summary>
         /// Constructor for KdTree2D
         /// </summary>
         public KdTree2D()
         {
-            count = 0;
+            Count = 0;
         }
 
         /// <summary>
@@ -43,9 +43,9 @@ namespace RevitUtils
         {
             //Position is requried to place data
             if (position == null)
-                throw new ArgumentNullException("Position cannot be null");
+                throw new ArgumentNullException("position");
             head = Put(head, data, position, Rectangle.Infinite, true);
-            count++;
+            Count++;
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace RevitUtils
                 }
                 else
                 {
-                    current.more = Put(current.less, Data, position,
+                    current.more = Put(current.more, Data, position,
                         new Rectangle(current.Position.X, rect.MinY,  rect.MaxX, rect.MaxY)
                         , !xy);
                 }
@@ -90,7 +90,7 @@ namespace RevitUtils
                 }
                 else
                 {
-                    current.more = Put(current.less, Data, position,
+                    current.more = Put(current.more, Data, position,
                         new Rectangle(rect.MinX, current.Position.Y, rect.MaxX, rect.MaxY)
                         , !xy);
                 }
@@ -158,8 +158,10 @@ namespace RevitUtils
         /// <returns>The data closest to the point passed in.</returns>
         public T Nearest(Point2D point)
         {
-            if (count == 0)
+            if (Count == 0)
                 throw new InvalidOperationException("Tree has no elements");
+            if (point == null)
+                throw new ArgumentNullException("point");
             Node champ = head;
             Nearest(head, point, true, ref champ);
             return champ.Data;

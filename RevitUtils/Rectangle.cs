@@ -16,12 +16,8 @@ namespace RevitUtils
 
         public static Rectangle Infinite = new Rectangle(Point2D.Min, Point2D.Max);
 
-        public Rectangle(Point2D min, Point2D max)
+        public Rectangle(Point2D min, Point2D max) : this(Utils.CheckNotNull<Point2D>(min).X, Utils.CheckNotNull<Point2D>(min).Y, Utils.CheckNotNull<Point2D>(max).X, Utils.CheckNotNull<Point2D>(max).Y)
         {
-            MinX = min.X;
-            MinY = min.Y;
-            MaxX = max.X;
-            MaxY = max.Y;
         }
 
         public Rectangle(double minX, double minY, double maxX, double maxY)
